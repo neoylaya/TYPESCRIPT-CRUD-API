@@ -1,10 +1,10 @@
 // src/_helpers/db.ts
-import config from '../../config.json';
+const config = require('../../config.json');
 import mysql from 'mysql2/promise';
 import { Sequelize } from 'sequelize';
 
 export interface Database {
-  User: any; // We'll type this properly after creating the model
+  User: any;  // We'll type this properly after creating the model
 }
 
 export const db: Database = {} as Database;
