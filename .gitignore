@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Environment & Config (SENSITIVE - never push these!)
+config.json
+.env
+.env.local
+.env.production
+
+# Compiled Output
+dist/
+build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+#

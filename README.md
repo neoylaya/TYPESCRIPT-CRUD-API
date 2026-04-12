@@ -1,0 +1,122 @@
+#  typescript-crud-api
+
+A fully-typed REST API for user management, powered by **Express** and **MySQL** — built as part of a hands-on TypeScript learning activity.
+
+---
+
+##  Built With
+
+| Technology | Purpose |
+|---|---|
+| Node.js + TypeScript | Server runtime with static typing |
+| Express.js | HTTP routing and middleware |
+| MySQL + Sequelize | Relational database and ORM |
+| Joi | Request body validation |
+| bcryptjs | Password hashing |
+| JWT | Token-based authentication |
+
+---
+
+##  Quick Start
+
+**Clone and install**
+```bash
+git clone https://github.com/neoylaya/typescript-crud-api.git
+cd typescript-crud-api
+npm install
+```
+
+**Set up your database config**
+
+Create a `config.json` file at the root of the project:
+```json
+{
+  "database": {
+    "host": "localhost",
+    "port": 3306,
+    "user": "root",
+    "password": "your_password",
+    "database": "typescript_crud_api"
+  },
+  "jwtSecret": "your_secret_key"
+}
+```
+
+>  `config.json` is listed in `.gitignore` — never commit your credentials.
+
+**Start the server**
+```bash
+npm run start:dev
+```
+Visit `http://localhost:4000` 
+
+---
+
+##  Project Structure
+src/
+├── _helpers/
+│   ├── db.ts              # Sequelize initialization
+│   └── role.ts            # Role enum (Admin / User)
+├── _middleware/
+│   ├── errorHandler.ts    # Global error handling
+│   └── validateRequest.ts # Joi request validation
+├── users/
+│   ├── user.model.ts      # Sequelize User model
+│   ├── user.service.ts    # Business logic
+│   └── users.controller.ts# Route handlers
+└── server.ts              # App entry point
+---
+
+##  API Reference
+
+Base URL: `http://localhost:4000`
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| `GET` | `/users` | Fetch all users |
+| `GET` | `/users/:id` | Fetch a single user |
+| `POST` | `/users` | Register a new user |
+| `PUT` | `/users/:id` | Update user details |
+| `DELETE` | `/users/:id` | Remove a user |
+
+---
+
+##  Sample Usage
+
+**Register a new user**
+```bash
+curl -X POST http://localhost:4000/users \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Mr",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john@example.com",
+    "password": "secret123",
+    "confirmPassword": "secret123",
+    "role": "User"
+  }'
+```
+
+**Expected response**
+```json
+{ "message": "User created" }
+```
+
+---
+
+##  Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run start:dev` | Start dev server with auto-reload |
+| `npm run build` | Compile TypeScript to JavaScript |
+| `npm run start` | Run compiled production build |
+| `npm run test` | Run API tests |
+
+---
+
+##  Author
+
+**Josh Neo A. Ylaya**  
+GitHub: [@neoylaya](https://github.com/neoylaya)
