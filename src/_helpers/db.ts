@@ -1,10 +1,18 @@
 // src/_helpers/db.ts
+<<<<<<< HEAD
 import config from '../../config.json';
+=======
+const config = require('../../config.json');
+>>>>>>> 151959f40d49d087b4f00462d27705431722ef55
 import mysql from 'mysql2/promise';
 import { Sequelize } from 'sequelize';
 
 export interface Database {
+<<<<<<< HEAD
   User: any; // We'll type this properly after creating the model
+=======
+  User: any;  // We'll type this properly after creating the model
+>>>>>>> 151959f40d49d087b4f00462d27705431722ef55
 }
 
 export const db: Database = {} as Database;

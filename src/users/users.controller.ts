@@ -8,17 +8,28 @@ import { userService } from './user.service';
 
 const router = Router();
 
+<<<<<<< HEAD
 
+=======
+// 🛣 ROUTES
+>>>>>>> 151959f40d49d087b4f00462d27705431722ef55
 router.get('/', getAll);
 router.get('/:id', getById);
 router.post('/', createSchema, create);
 router.put('/:id', updateSchema, update);
 router.delete('/:id', _delete);
+<<<<<<< HEAD
 router.post('/authenticate', authenticateHandler);
 
 export default router;
 
 
+=======
+
+export default router;
+
+// 🔧 ROUTE HANDLERS (typed)
+>>>>>>> 151959f40d49d087b4f00462d27705431722ef55
 function getAll(req: Request, res: Response, next: NextFunction): void {
   userService.getAll()
     .then((users) => res.json(users))
@@ -49,6 +60,7 @@ function _delete(req: Request, res: Response, next: NextFunction): void {
     .catch(next);
 }
 
+<<<<<<< HEAD
 function authenticateHandler(req: Request, res: Response, next: NextFunction): void {
   const { email, password } = req.body;
   userService.authenticate(email, password)
@@ -56,6 +68,9 @@ function authenticateHandler(req: Request, res: Response, next: NextFunction): v
     .catch(next);
 }
 
+=======
+// 🔒 VALIDATION SCHEMAS
+>>>>>>> 151959f40d49d087b4f00462d27705431722ef55
 function createSchema(req: Request, res: Response, next: NextFunction): void {
   const schema = Joi.object({
     title: Joi.string().required(),

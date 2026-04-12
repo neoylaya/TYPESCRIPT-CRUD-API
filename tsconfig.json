@@ -18,6 +18,11 @@
       "users/*": ["users/*"]
     }
   },
+<<<<<<< HEAD
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
+=======
+  "include":  ["src/**/*"],
+  "exclude":  ["node_modules", "dist"]
+>>>>>>> 151959f40d49d087b4f00462d27705431722ef55
 }
